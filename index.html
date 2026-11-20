@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LG Creations builds custom indoor furniture, outdoor structures and bespoke timber feature pieces. Your idea, built to last.">
+  <meta name="theme-color" content="#20251f">
+  <title>LG Creations | Custom Carpentry & Outdoor Builds</title>
+  <style>
+    :root {
+      --ink: #20251f;
+      --muted: #6e7168;
+      --cream: #f5f1e8;
+      --paper: #fffdf8;
+      --wood: #a86f42;
+      --wood-dark: #75492d;
+      --line: #e6dfd2;
+      --green: #59664d;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    .topbar { background: var(--ink); color: #f8f4eb; font-size: 13px; padding: 9px 0; }
+    .topbar .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    header { background: rgba(255,253,248,.96); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px); }
+    nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .04em; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; background: var(--wood); color: white; font-family: Georgia, serif; font-size: 20px; border-radius: 3px; }
+    .brand small { display: block; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .17em; margin-top: -3px; }
+    .navlinks { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 700; }
+    .navlinks a:hover { color: var(--wood-dark); }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--wood); color: white; padding: 13px 20px; border-radius: 3px; font-weight: 800; font-size: 14px; transition: .2s; border: 1px solid var(--wood); }
+    .button:hover { background: var(--wood-dark); border-color: var(--wood-dark); transform: translateY(-1px); }
+    .button.outline { background: transparent; color: white; border-color: rgba(255,255,255,.55); }
+    .button.outline:hover { background: white; color: var(--ink); }
+    .hero { color: white; background: linear-gradient(90deg, rgba(25,29,24,.91) 0%, rgba(25,29,24,.72) 48%, rgba(25,29,24,.18) 100%), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85') center/cover; min-height: 610px; display: flex; align-items: center; }
+    .hero-content { max-width: 680px; padding: 88px 0; }
+    .eyebrow { color: #d6ad83; text-transform: uppercase; letter-spacing: .2em; font-size: 12px; font-weight: 800; }
+    h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(42px, 6vw, 70px); line-height: 1.04; margin: 18px 0; font-weight: 500; }
+    .hero p { color: #eee9df; max-width: 590px; font-size: 18px; margin: 0 0 30px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .trustline { display: flex; gap: 25px; flex-wrap: wrap; margin-top: 46px; color: #e5ded2; font-size: 13px; }
+    .trustline span:before { content: "✓"; color: #d6ad83; font-weight: 900; margin-right: 8px; }
+    section { padding: 86px 0; }
+    .section-head { max-width: 700px; margin-bottom: 38px; }
+    .section-head .eyebrow { color: var(--wood-dark); }
+    h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw, 46px); line-height: 1.12; font-weight: 500; margin: 12px 0 14px; }
+    .section-head p { color: var(--muted); margin: 0; font-size: 16px; }
+    .services { background: var(--cream); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: var(--paper); border: 1px solid var(--line); }
+    .card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .card-body { padding: 24px; }
+    .card h3 { font-family: Georgia, serif; font-size: 23px; font-weight: 500; margin: 0 0 10px; }
+    .card p { color: var(--muted); font-size: 14px; margin: 0 0 15px; }
+    .card ul { padding-left: 18px; color: #454a42; font-size: 14px; margin: 0; }
+    .card li { margin: 5px 0; }
+    .portfolio { background: var(--paper); }
+    .project-gallery .card img { height: 260px; object-fit: cover; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .intro-image { min-height: 440px; background: url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1100&q=85') center/cover; }
+    .intro-copy p { color: var(--muted); }
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 26px; margin-top: 28px; }
+    .feature { border-top: 1px solid var(--line); padding-top: 14px; }
+    .feature strong { display: block; margin-bottom: 4px; }
+    .feature span { color: var(--muted); font-size: 14px; }
+    .process { background: #252b24; color: white; }
+    .process .section-head p { color: #c7c9c0; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .step { border-top: 1px solid #62695e; padding-top: 20px; }
+    .step b { color: #d6ad83; font-family: Georgia, serif; font-size: 34px; font-weight: 400; }
+    .step h3 { margin: 9px 0 6px; font-size: 18px; }
+    .step p { margin: 0; color: #c7c9c0; font-size: 14px; }
+    .cta { background: var(--cream); text-align: center; }
+    .cta .section-head { margin: 0 auto 26px; }
+    .cta .section-head p { max-width: 620px; margin: auto; }
+    .contact-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    footer { background: var(--ink); color: #f6f1e8; padding: 30px 0; font-size: 13px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer span { color: #c6c4ba; }
+    @media (max-width: 760px) {
+      .navlinks { gap: 14px; }
+      .navlinks a:not(.button) { display: none; }
+      .hero { min-height: 570px; background-position: 58% center; }
+      .hero p { font-size: 16px; }
+      section { padding: 64px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .card img { height: 240px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 30px; }
+      .intro-image { min-height: 300px; }
+      .steps { grid-template-columns: 1fr; gap: 22px; }
+    }
+    @media (max-width: 420px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .topbar .wrap { justify-content: center; }
+      .brand { font-size: 14px; }
+      .navlinks .button { padding: 10px 12px; font-size: 12px; }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>Custom carpentry • Indoor & outdoor builds</span><span>South Africa · Built around your space</span></div></div>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home"><span class="brand-mark">LG</span><span>LG CREATIONS<small>MADE TO FIT. BUILT TO LAST.</small></span></a>
+        <div class="navlinks"><a href="#services">What We Build</a><a href="#portfolio">Our Projects</a><a href="#about">Why LG</a><a href="#process">How It Works</a><a class="button" href="#contact">Get a Quote</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap"><div class="hero-content">
+        <div class="eyebrow">Custom master carpentry & outdoor builds</div>
+        <h1>Your idea.<br>Our craftsmanship.</h1>
+        <p>From custom furniture to garden structures, we turn your sketches, photos and ideas into practical, hard-wearing builds made to fit your space.</p>
+        <div class="hero-actions"><a class="button" href="https://wa.me/27718898031?text=Hi%20LG%20Creations%2C%20I%27d%20like%20to%20discuss%20a%20custom%20project.">Discuss Your Project ↗</a><a class="button outline" href="#services">Explore Our Work</a></div>
+        <div class="trustline"><span>Made to measure</span><span>Quality materials</span><span>Built for real use</span></div>
+      </div></div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">What we create</div><h2>Purpose-built pieces for your home and garden.</h2><p>No one-size-fits-all templates. Each project is planned around your measurements, layout and the way you want to use the space.</p></div>
+        <div class="cards">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Modern living room with custom built-in cabinetry">
+            <div class="card-body"><h3>Custom Indoor Furniture</h3><p>Smart, seamless furniture designed to work with your room—not against it.</p><ul><li>Media walls and entertainment units</li><li>Custom shelving and cabinetry</li><li>Floor-to-ceiling built-ins</li></ul></div>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Timber outdoor patio and garden living area">
+            <div class="card-body"><h3>Garden & Outdoor Builds</h3><p>Outdoor structures designed for everyday use and the conditions they face.</p><ul><li>Carports and pergolas</li><li>Garden arches and climbing trellises</li><li>Built-in outdoor bench seating</li></ul></div>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Decorative geometric timber wall feature">
+            <div class="card-body"><h3>Bespoke Feature Pieces</h3><p>Distinctive details that add character and make your space your own.</p><ul><li>Architectural wall lattice designs</li><li>Geometric timber features</li><li>Custom statement installations</li></ul></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">A look at our craftsmanship</div><h2>Real projects. Made by LG Creations.</h2><p>A selection of custom builds, including made-to-measure shelving, outdoor timber structures and our distinctive heart-shaped garden feature.</p></div>
+        <div class="cards project-gallery">
+          <article class="card">
+            <img src="images/custom-pergola.jpg" alt="Completed custom timber garden pergola built by LG Creations" loading="lazy">
+            <div class="card-body"><h3>Custom Garden Pergola</h3><p>A timber outdoor feature designed to complement the garden and brickwork.</p></div>
+          </article>
+          <article class="card">
+            <img src="images/custom-built-in-shelving.jpg" alt="Made-to-measure built-in shelving and cabinetry under construction by LG Creations" loading="lazy">
+            <div class="card-body"><h3>Made-to-Measure Shelving</h3><p>Custom shelving and cabinetry planned around the room's layout and existing doorway.</p></div>
+          </article>
+          <article class="card">
+            <img src="images/lg-creations-projects.jpg" alt="LG Creations project collage showing custom shelving, a timber garden pergola and a handmade heart-shaped garden trellis" loading="lazy">
+            <div class="card-body"><h3>More Custom Builds</h3><p>A selection of indoor and outdoor creations, including a bespoke heart-shaped garden trellis.</p></div>
+          </article>
+          <article class="card">
+            <img src="images/pinewood-heart-decor.jpg" alt="Three handmade pinewood heart garden decorations with a lightly tinted Waksol finish, displayed on a brick garden wall" loading="lazy">
+            <div class="card-body"><h3>Handmade Pinewood Heart Décor</h3><p>Three individually shaped and detailed pinewood hearts, finished with lightly tinted Waksol to bring out the natural golden wood grain. A charming custom touch for garden spaces.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap intro-grid">
+        <div class="intro-image" role="img" aria-label="Warm modern interior featuring detailed timber finishes"></div>
+        <div class="intro-copy"><div class="eyebrow">Why choose LG Creations?</div><h2>Crafted for your space. Made for everyday life.</h2><p>We believe good carpentry should look right, fit properly and stand up to real-world use. Bring us a rough sketch, a reference photo or an idea—we'll help turn it into a build that makes sense for your space.</p>
+          <div class="features">
+            <div class="feature"><strong>Real timber craftsmanship</strong><span>Quality wood and durable materials selected for the job.</span></div>
+            <div class="feature"><strong>Tailor-made sizing</strong><span>Planned around your room, brickwork, roofline and layout.</span></div>
+            <div class="feature"><strong>Practical construction</strong><span>Thoughtful design with strength, fit and function in mind.</span></div>
+            <div class="feature"><strong>Your idea, brought to life</strong><span>We work from your inspiration and project requirements.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Simple from start to finish</div><h2>Let's build something that fits.</h2><p>Every great project starts with a conversation. Here's how we get your idea moving.</p></div>
+        <div class="steps">
+          <div class="step"><b>01</b><h3>Share your idea</h3><p>Send a photo, sketch, measurements or a description of what you have in mind.</p></div>
+          <div class="step"><b>02</b><h3>Plan your project</h3><p>Discuss the space, design, materials and practical details with LG Creations.</p></div>
+          <div class="step"><b>03</b><h3>Get your quote</h3><p>We'll discuss the proposed build and the next steps for bringing it to life.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Start your next project</div><h2>Have an idea? Let's make it real.</h2><p>Contact LG Creations to discuss your custom indoor or outdoor project. Send through your inspiration and tell us what you'd like built.</p></div>
+        <div class="contact-row"><a class="button" href="https://wa.me/27718898031?text=Hi%20LG%20Creations%2C%20I%27d%20like%20to%20request%20a%20quote.">WhatsApp: 071 889 8031</a><a class="button" style="background:transparent;color:var(--ink)" href="tel:+27718898031">Call Us</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><strong>LG CREATIONS</strong><span>Custom carpentry & outdoor builds · South Africa</span><span>© <span id="year">2026</span> LG Creations</span></div></footer>
+</body>
+</html>
